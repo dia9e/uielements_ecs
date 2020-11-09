@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: AnimalsHouse
   m_EditorClassIdentifier: Assembly-CSharp:Scripts:AnimalsHouse
+  Animals:
+  - Type: Cat
+    Sound: Meow
+    MaxFoodCount: 750
+    MaxSleepSeconds: 1500
+  - Type: Dog
+    Sound: Woof
+    MaxFoodCount: 1000
+    MaxSleepSeconds: 1000

@@ -1,4 +1,4 @@
-using Boo.Lang;
+using System.Collections.Generic;
 using Editor;
 using Scripts;
 using UnityEditor;
@@ -23,7 +23,7 @@ public class AnimalsInfoEditor : EditorWindow
   private AnimalEditor _lastSelected;
 
   [MenuItem("AnimalsInfoEditor/Open _%#T")]
-  public static void StartSettings()
+  public static void OpenWindow()
   {
     if (AnimalsHouse.Instance == null)
       CreateInstance<AnimalsHouse>();
@@ -151,8 +151,7 @@ public class AnimalsInfoEditor : EditorWindow
     UpdateLastSelected();
     
     AnimalsHouse.Update(_animalsHouse);
-    
+
     AssetDatabase.SaveAssets();
-    AssetDatabase.Refresh();
   }
 }

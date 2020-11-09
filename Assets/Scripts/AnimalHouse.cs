@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
-using Boo.Lang;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,9 +10,9 @@ namespace Scripts
   {
     private const string AssetPath = "Assets";
     
-    public List<AnimalInfo> Animals;
-
     private static AnimalsHouse _instance;
+    
+    public List<AnimalInfo> Animals;
 
     public static AnimalsHouse Instance =>
       _instance ?? LoadInstance();
@@ -46,18 +46,19 @@ namespace Scripts
     
     private static AnimalsHouse CreateInstance()
     {
-      var instance = CreateInstance<AnimalsHouse>();
       var dirPath = AssetPath;
       if (!Directory.Exists(dirPath))
       {
         Directory.CreateDirectory(dirPath);
         AssetDatabase.ImportAsset(dirPath);
       }
-
-      var p = AssetFullPath;
-      if (instance && !string.IsNullOrEmpty(p))
-        AssetDatabase.CreateAsset(instance, p);
       
+      var instance = CreateInstance<AnimalsHouse>();
+      instance.Animals = new List<AnimalInfo>();
+      AssetDatabase.CreateAsset(instance, AssetFullPath);
+      AssetDatabase.SaveAssets();
+      AssetDatabase.Refresh();
+
       return instance;
     }
     
@@ -69,6 +70,6 @@ namespace Scripts
     }
 
     private static void MarkAsDirty() =>
-      EditorUtility.SetDirty(Instance);
+      EditorUtility.SetDirty(_instance);
   }
 }
