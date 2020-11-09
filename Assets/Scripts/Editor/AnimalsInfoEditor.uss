@@ -1,0 +1,72 @@
+#TopLine {
+    width: auto;
+    height: 100px;
+}
+
+#Container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    text-color: rgb(51, 51, 51);
+}
+
+#LeftPanel {
+    flex: 1;
+    border-width: 5px;
+    border-color: rgba(56, 56, 56, 1);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#Icons {
+    -unity-text-align: middle-center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#AnimalsList {
+    -unity-text-align: middle-center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+#RightPanel {
+    -unity-text-align: middle-center;
+    position: relative;
+    width: 500px;
+    border-width: 5px;
+    border-color: rgba(56, 56, 56, 1);
+}
+
+#RightTopPanel {
+    height: 75px;
+}
+
+#AnimalInfo {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#MainIcon {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.animal-icon {
+    width: 142px;
+    height: 150px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.animal-button-icon:hover {
+    height: 140px;
+    width: 140px;
+    opacity: 0.8;
+}
+
+.animal-button-icon:active {
+    opacity: 0.6;
+}

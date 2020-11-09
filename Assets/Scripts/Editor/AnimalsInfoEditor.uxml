@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:engine="UnityEngine.UIElements"
+        xmlns:editor="UnityEditor.UIElements"
+        xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+
+    <engine:Template src="/Assets/Scripts/Editor/AnimalInfoTemplate.uxml" name="animal-info"/>
+
+    <engine:Image name="TopLine"/>
+    <engine:Button text="Add new animal" name="AddNewButton"/>
+    <engine:Button text="Save changes" name="SaveButton"/>
+    
+    <engine:VisualElement name="Container">
+
+        <engine:ScrollView name="LeftPanel">
+            <engine:VisualElement name="Icons">
+                <engine:VisualElement name="AnimalsList"/>
+            </engine:VisualElement>
+        </engine:ScrollView>
+
+        <engine:VisualElement name="RightPanel">
+
+            <engine:VisualElement name="RightTopPanel">
+                <engine:Label text="Description:" style="-unity-font-style: bold; margin-top: 20px;"/>
+                <engine:Label text="Click to the animal's icon and get more information about this pet."/>
+            </engine:VisualElement>
+
+            <engine:VisualElement name="AnimalInfo">
+                <engine:Image name="InfoBackground">
+                    <engine:Label name="AnimalType" text="Type" style="-unity-font-style: bold; margin-top: 50px; margin-bottom: 15px; font-size: 25px;"/>
+                    <engine:Image name="MainIcon"/>
+                    <engine:TextField name="Type" label="Type Text" style="margin-left: 125px; width: 250px;"/>
+                    <engine:TextField name="SoundText" label="Sound Text" style="margin-left: 125px; width: 250px;"/>
+                    <editor:FloatField name="MaxFoodPoints" label="Max food points" style="margin-left: 125px; width: 250px;"/>
+                    <editor:FloatField name="MaxSleepPoints" label="Max sleep points" style="margin-left: 125px; margin-bottom: 100px; width: 250px;"/>
+                </engine:Image>
+            </engine:VisualElement>
+
+        </engine:VisualElement>
+
+    </engine:VisualElement>
+
+</engine:UXML>
